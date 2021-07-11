@@ -1,0 +1,146 @@
+Summary of Day1 session:
+========================
+
+Why java?
+WORA - PlatformInDependency
+IDE - netBeans, eclipse, IJ
+Craete project, Package, class
+Shortcuts
+keywords,datatypes,variables
+naming covention standards
+Conditional Statements - IF
+Iterative/Looping statement - for, while, do while
+
+Summary of July-11-2021
+=======================
+Conditional Statements
+switch case 
+
+jumping Statements - continue, break
+                   - continue --> skip that condition alone 
+                   - break    --> comes out of the loop totally
+
+class
+Object - Physical  entity
+
+1. How it looks? / property/ State  -- variables
+   -- colur
+   -- isFurry
+
+2. What is it going to do? action/Behaviour -- methods
+   --bark
+   -- canSmell
+   --canJump
+
+Class replicate the object/ Blueprint of the object
+
+method:
+========
+  method signature:
+    access specifier + returnType + methodName + arguments(if any)
+
+  Access specifiers:
+To set access levels for classes, variables, methods, and constructors
+Method level access specifiers:
+-------------------------------
+- public
+- protected
+- package ( default)
+- private 
+
+- Passing arguments - Value passed to the methods through arguments
+- Returning values  - Values are used from the methods by using return statement
+
+
+Access Specifier for class : public and package
+
+
+Instance Variables and Instance Methods :
+Accessed only thr objects
+So, create an instance and call these components
+
+ClassRoom:
+==========
+- Create package name as week1.day2
+- Create a  new class as "Mobile" under week2.day1
+- Create 2 public methods (makeCall() , sendMsg()) with simple print statement
+- Create a private method payBills() with simple print statement
+- Create main method
+
+- Create object for Mobile class and call the methods using the object
+- Execute the class and get the result in console
+
+
+- Create a new class as MyKid in week2.day1 package
+- Create an object for the previous class "Mobile"
+- Try to access all the 3 methods of class "Mobile"
+
+ARRAY:
+-----
+- An array is a collection of similar type of elements which has contiguous memory location-
+- We can store only a fixed set of elements in a Java array.
+- Array in Java is index-based
+
+Size Limit: We can store only the fixed size of elements in the array. 
+            It doesn't grow its size at runtime.
+            To solve this problem, collection framework is used in Java which grows automatically.
+- length of an array
+
+- Access through - for loop and for each
+
+Printing an array in reverse order:
+Sort the array
+Print in reverse oeder using for loop
+
+Class room:
+==========
+1. Create an character array 
+2. Print the length of the array
+3. Print all the elemnts of the array ( use for and for each loop)
+4. Print all the elemnts of the array in reverse order ( use for and for each loop)
+
+To print the last element of the array
+
+Exception: ArrayIndexOutOfBoundsException
+
+
+STRINGS:
+=======
+
+1. Length
+2. charAt()
+3. indexOf()
+4. lastIndexOf()
+5. toCharArray()
+6. split()
+
+
+
+
+7. replace
+8. replace integers, non integers
+str.replaceAll("[\\d]", ""); - non integers
+str.replaceAll("[\\D]", ""); - integers
+9. .equals
+9. toLowerCase
+10. toUpperCase
+11. startsWith()
+12. endsWith()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
