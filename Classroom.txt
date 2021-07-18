@@ -245,6 +245,136 @@ STEPS FOR CREATE LEAD TEST CASE
 // Step14: Enter LastName
 // Step15: Click CreateLead button
 
+week2 Day2: 
+18-07-2021
+==========
+Topic 1:
+--------
+1. Maxixmise
+2. ImplicitlyWait( yet to be covered)
+driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+Topic 2:
+--------
+DropDown: Demo
+http://www.leafground.com/pages/Dropdown.html (first three options)
+
+How to select a value in dropdown list?
+-----------------------------------------
+1. selectByVisibleText: selectByVisibleText(String arg0): void
+2. selectByIndex: selectByIndex(int arg0) : void
+3. selectByValue: selectByValue(String arg0) : void
+4. getOptions().size()
+
+Exception:
+NoSuchValueException
+
+Class room 1 
+------------
+Implement Dropdowns on the following fields of Create Lead:
+
+Source - selectByValue()
+Marketing Campaign - selectByVisibleText()
+Industry - selectByIndex()
+Preferred Currency - selectByValue()
+Ownership - selectUsingVisibleText()
+State/Province - selectByIndex()
+Country - selectByVisibleText()
+
+
+Topic 3:
+--------
+Xpath
+
+When to use the Xpath?
+When I donot have any locators ( id, name,class...) to locate the web element
+
+Xpath doesnot have zero based index
+Index start with 1
+
+
+Types of XPath:
+***************
+
+A. Absolute Xpath:
+===================
+Xpath of username field in login page:
+/html/body/div[2]/div/div/form/p/input
+
+It contains the complete path from the Root Element to the desired element.
+
+- not a preffered choice
+- Unreliable because a small change in the UI, can change the absolute Xpath  
+
+
+B. Relative Xpath: (13 types of Xpath)
+==================
+We start from a reference element and reach the particular element
+Selenium by default chooses the first result out of multiple results
+Xpath of username field in login page:
+(eg)//input
+
+
+1. Attribute Based XPath:
+   ---------------------
+Syntax:
+//tagname[@attribute='attributeValue']
+
+//input[@id='username']
+//input[@class='inputLogin']
+//input[@type='password']
+
+2. Text Based Xpath:
+   ----------------
+Syntax:
+//tagname[text()='text value in DOM']
+
+//label[text()='Username']
+//h2[text()='Leaftaps Login']
+
+3. Partial Match Xpath:
+=======================
+
+a) Partial Text Based Xpath:
+---------------------------
+Syntax:
+//tagname[contains(text(),'Partial text in my DOM')]
+//h2[contains(text(),'Leaftaps')]
+
+a) Partial attribute Based Xpath:
+---------------------------------
+//tagname[contains(@attribute,'Partial value of the attribute')]
+
+//input[@type='password']
+//input[contains(@type,'pass')]
+
+4. Collections Based Xpath:
+===========================
+
+Syntax:
+(Any valid relative Xpath)[index]
+(Xpath)[index]
+
+(//input[@class='inputLogin'])[2]
+
+
+5. Advanced Xpath/ RelationShip based Xpath/ Axes based Xpath
+=============================================================
+
+8 types and its syntax:
+-----------------------
+
+1	Parent To child                 : parent xpath/tagName of child
+2	GrandParent to child Relation   : GrandParent xpath//tagName of grand child
+3	Child to parent                 : child xpath/parent::parent tagName
+4	GrandChild to Grand parent      : GrandChild xpath/ancestor::tagName of grand parent
+5	Elder Sibling toYounger Sibling : Elder sibling xpath/following-sibling::tagName of younger sibling
+6	Younger Sibling to elder Sibling: Younger sibling xpath/preceding-sibling::tagName of Elder sibling
+7	Elder cousin to Younger cousin  : Elder cousing xpath/following::tagName of younger Cousin
+8	Younger cousin to Elder cousin  : Younger cousin xpath/preceding::tagName of Elder cousin
+
+
+13 types of Xpath
 
 
 
