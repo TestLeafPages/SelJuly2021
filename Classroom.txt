@@ -377,6 +377,79 @@ Syntax:
 13 types of Xpath
 
 
+****************************************************************
+24.07.2021
+week3 day1
+OOPS Concepts:
+
+Topic: INHERTANCE
+
+Inheritance in Java
+-------------------
+Classroom 1:
+Create 3 classes 
+- Mobile (methods: sendMsg(),makeCall(),saveContact() 
+- AndroidPhone (method: takeVideo)
+- SmartPhone (method: connectWhatsApp)
+
+Note:
+- AndroidPhone extends Mobile (Single Level Inheritance)
+- SmartPhone extends AndroidPhone ( Multilevel Inheritance)
+
+Execution class:
+- Create a class named MyPhone for execution ( must have a main method)
+- First, Create an object for AndroidPhone and see what all methods can be accessed ( Single Level Inheritance)
+- Then, Create object for SmartPhone class and see if you can call all the methods using this object ( Multilevel Inheritance)
+
+Inheritance in Selenium
+-----------------------
+ChromiumDriver extends RemoteWebDriver				
+ChromeDriver extends ChromiumDriver				
+EdgeDriver extends ChromiumDriver				
+SafariDriver extends RemoteWebDriver				
+FireFoxDriver extends RemoteWebDriver				
+
+
+POLYMORPHISM:
+------------
+Many forms of same entity
+
+
+1. methodOverRiding/Dynamic binding/RunTime Polymorphism
+2. methodOverloading/Static binding/compileTime polymorphism
+
+1.methodOverRiding:
+
+Audi - changeGear()- override
+
+2. methodOverloading/Static binding/compileTime polymorphism:
+
+Same name - different arguments/ diff num of args
+
+we can implement method overloading in two different ways:
+implementing two or more methods that have the same name but take different numbers of arguments
+implementing two or more methods that have the same name but take arguments of different types
+
+thod Overriding*
+In the Classroom 1, 
+ - Create the same method(takeVideo) in the SmartPhone class ( This is the same as in AndroidPhone class) 
+*(Here you are overriding the parent method)*
+ - Execute takeVideo() method using ChildClass object
+ - Ensure from which class the takeVideo() is executed.
+
+
+Classroom 3:
+*Method Overloading*
+Create class Calculator with below methods
+
+- 2 methods for add, 1 method with 2 int args , 1 method with 3 int args
+- 2 methods for multiply, 1 method with 2 int args, 1method with 1 int and 1 double args
+- 2 methods for subtract, 1 method with 2 int args , 1 method with 2 double args
+- 2 methods to divide , 1 method with 2 int args, 1 method with one double number and one int
+
+create object for the Calculator class and execute all the methods
+
+
 
 
 
