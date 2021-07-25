@@ -34,6 +34,139 @@ Object - Physical  entity
 
 Class replicate the object/ Blueprint of the object
 
+******************************************
+25.07.2021
+week3 day2
+
+Agenda :
+OOPS   : Abstraction
+            - Interface
+            - Abstract class
+COLLECTIONS: List 
+             Set
+
+***************************
+
+OOPS Concepts:
+*************
+
+Topic: ABSTRACTION
+ Abstraction is a process of hiding the implementation details 
+ Showing only functionality to the user.
+
+-- Interface ( 100% of abstraction)
+-- Abstract Class (0-100 % of abstraction )
+
+What is Interface?
+- design/Plan ()
+
+
+Abstract class : class without a body / no implementation
+Concrete class : class with a body / implementation
+
+1. Added Unimplemented methods inside the Interface
+2. Type the Documentation (use /** - Enter)
+3. Use the Keyword : implements 
+4. All the unimplemnted methods of an Interface has to be 
+   implemented in the implementation class 
+   (ie. the class that implemnts that Interface)
+5. The implementation class can have its own method in it too.
+6. Object instantiation cannot be done for an Interface.
+7. CLASS LEVEL MULTIPLE INHERITANCE IS NOT POSSIBLE
+   INTERFACE LEVEL MULTIPLE INHERITANCE IS POSSIBLE
+     ( do it with TWO INTERFACES)
+8. Inheritence - extends
+   A class can inherit and also implement, both at a time.
+
+
+Classroom 1:
+
+1. Design an Interface TaxCalculation with unimplemnted methods below:
+  public double incomeAdd(String name, double amount1, double amount2)
+  public double incomeReduce(String name, double amount1, double amount2)
+  public void publishValue()
+
+2. Design a second Interface IncomeCalculation with unimplemnted methods below:
+  void calcGrossIncome();
+  void removeDeductions();
+
+3. Implentation class: CalcIndividualsTax
+       Try to implement all the above learnings ( from point 1 to point 8) 
+
+Abstract :
+
+Classroom2:
+     AbstractClass     :University
+     Methods           : pg()(implemented method),
+                         ug() (unimplemented method)
+
+     Class     : College extends University
+     Methods   :ug()
+*****************************
+class      extends     class
+class      implements     Interface
+Interface  extends  Interface
+*****************************
+
+Selenium examples:
+*******************
+
+WebDriver - Interface
+RemoteWebDriver implements WebDriver
+
+COLLECTIONS
+----------
+
+1. List - single dimensional
+2. Set  - single dimensional
+3. Map  - 2 dimensional
+
+Array : cons
+    dynamic growth of the array size is not possible
+
+9000 bags on a day listed
+array - to store 9000
+ 
+12000 bags listed another day
+Array cannot be used for this
+
+List:
+-----
+1. Interface
+2. cannot instantiate
+3. Implmentation class : ArrayList
+4. Maintains the insertion order
+5. Can accept duplicates
+6. syntax:
+
+
+List<String> listName = new ArrayList<String>();
+List<Integer> listName = new ArrayList<Integer>();
+
+< > : Generics
+Wrapper Class:
+-------------
+int     Integer
+short   Short
+boolean Boolean
+char    Character
+double  Double
+String  String
+byte    Byte
+long    Long
+float   Float
+
+SET:
+1. Interface
+2. cannot instantiate
+3. Implmentation class : 
+     HashSet       : Random order of the data
+     LinkedHashSet : maintains the insertion Order
+     TreeSet       : ASCII order ( sorted)
+4. Maintains the insertion order
+5. Cannot accept duplicates
+6. syntax:
+
 method:
 ========
   method signature:
