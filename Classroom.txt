@@ -582,6 +582,262 @@ Create class Calculator with below methods
 
 create object for the Calculator class and execute all the methods
 
+*****************************************************************************************************************************
+
+Week4 Day1: 31/07/2021
+AGENDA:
+
+1. IMPLICITLY WAIT
+2. Alerts
+3. Frames
+4. WindowHandling
+5. TakeScreenShot
+
+
+By implicitly waiting, 
+   WebDriver polls the DOM for a certain duration when trying to find any element. 
+   This can be useful when certain elements on the webpage are not available immediately and need some time to load.
+   The default setting is 0, meaning disabled. Once set, the implicit wait is set for the life of the session.
+
+findElement()
+findElements()
+
+
+       alpha 6:  driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+       alpha 7:  driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+
+
+ALERT:
+
+What is an Alert?
+-- POPUP dialog box
+warning, message, ask me a small confirmation
+(egs)
+1. simple Alert : Axis retail banking (Right click)
+2. Sweet Alert : 
+
+Types:
+1. Window based popup
+    --> gmail--> compose--> attachment--> dialog box pops up
+    --> ROBOT class
+
+2. Web based pop up:
+
+Types:
+1. Modal dialog
+
+****************
+  -- We cannot inspect the alert( cannot right-click)
+       (Because alerts are written in DOM using javaScript ( not HTML))
+  -- We cannot interact with the main page, untill the alert is handled
+
+Types of Modal dialog:
+---------------------
+1. Simple alert        --  OK            void accept(); 
+2. Confirmation Alert  -- Ok, Cancel -   void dismiss(); 
+3. Prompt Alert        -- textBox,-  void sendKeys(String keysToSend);
+                          Ok, cancel
+                       -- String getText() 
+                          - To get the text from the alert box
+How do handle an alert?
+-----------------------
+-- try to inspect : findElement() - can this be used? NO
+-- javaScript Alert and not found in DOM
+
+-- Handle using the Interface -- Alert
+   Implementation class of Alert interface --> RemoteAlert, EventFiringAlert
+
+Ok                   --> accept()  --> return - void  (Positive actions)
+cancel               --> dismiss()--> return - void   (Negative actions)
+To enter the text    --> sendKeys()--> return - void
+To get the text(msg) --> getText() --> returns String
+
+
+ALERT EXCEPTIONS:
+----------------
+1)
+// Throws org.openqa.selenium.NoAlertPresentException
+   Occurs when trying to interact with the alert that is not active curently
+
+2)
+// org.openqa.selenium.UnhandledAlertException
+   Occurs when Alert is still alive and	
+       I try to access the main window
+
+can a page has multiple alerrts?
+
+ex:- AJIO Application
+     alert is not comming same page
+       --- while landing page
+       --- while search item
+
+2. Non-Modal Dialog:(sweet Alert)
+*********************************
+
+egs: IRCTC, tatcliq
+
+https://www.tatacliq.com/
+      https://www.irctc.co.in/nget/train-search
+
+// Handled as a normal webElement
+// Can write Xpath
+// Can use findElement()
+
+
+*************************************
+ClassRoom for Alerts in LeafGrounds : 
+  First two cases alone
+**************************************
+
+
+&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&
+
+FRAMES:
+
+-- DOM inside a DOM
+
+How to identify a Frame is present?
+1. look for iframes ot frames tag in your DOM
+2. Inspect the element
+
+How does it appear in DOM?
+
+
+1. <iframe> -- inline frame (floating frame)
+2. <frame>  -- static frame/immovable
+
+http://www.leafground.com/pages/frame.html
+
+What if my element is inside a frame and try to access it without enetering the frame?
+
+ClickMe -- first option
+Throws Exception: NoSuchElementException
+             
+
+// How to access the frame?
+
+1. Select my frame through index
+2. Select my frame attribute -- id/name
+3. Select my frame as normal as a webelement (Xpath)	
+
+
+RETURNING THE CONROL TO THE PREVIOUS LEVELS :
+DefaultContent -- Frame2 control to main DOM  (Top of the DOM)
+parentFrame    -- Frame2 to Frame1 ( One level higher)
+
+To think:
+
+In case 3, to find the number of frames, it returns 3. 
+But in the DOM, it gives 7 when searched. 
+WHY?
+
+EXCEPTIONS OF FRAMES:
+
+NoSuchFrameException
+     (NoSuchElementException) - element is loaded in the DOM. But not visible
+    
+
+ClassRoom for Alerts and Frames:
+--------------------------------
+
+https://www.w3schools.com/js/tryit.asp?filename=tryjs_confirm
+Click Try It Button
+Click OK/Cancel in the alert
+Confirm the action is performed correctly by verifying the text !!
+ Hint
+
+
+
+Switch to the frame
+Then click Try It with xpath
+Switch to the alert
+Then perform accept / dismiss
+Get the text using id 
+Verify the text based on the action
+
+
+
+
+Assignment: 
+1. serviceNow
+2. https://chercher.tech/practice/frames-example-selenium-webdriver
+
+
+**********************************************************************************************
+
+WINDOW HANDLING:
+
+webelements: locators (unique)
+frames : index / nameor Id/ webElement
+windows :
+
+title
+URL
+index
+id
+<a>
+href
+
+What is a window handle? 
+A window handle is a unique identifier that holds the address of all the windows. 
+This is basically a pointer to a window, which returns the string value. 
+This window handle function helps in getting the handles of all the windows.
+ It is guaranteed that each browser will have a unique window handle.
+
+
+getWindowhandle(): helps in getting the window handle of the current window
+getWindowhandles(): helps in getting the handles of all the windows opened
+
+-- set
+
+How do you confirm the order of windows
+
+Array
+  
+List
+
+Set
+
+cant we have list directy
+
+
+
+driver.close();   - closes the current active window
+driver.quit();  - closes all the related windows
+
+Methods needed to handle multiple windows:
+
+Exceptions:
+org.openqa.selenium.NoSuchWindowException: 
+ org.openqa.selenium.NoSuchSessionException: Session ID is null. Using WebDriver after calling quit()?
+
+Alerts and Window handling
+---------------------------
+1. Load https://www.irctc.co.in/
+2. Click on OK button in the dialog  
+3. Click on FLIGHTS link            
+4. Go to the Flights tab
+5. Print the customer care email id
+6. Close the First tab(Train ticket booking) alone
+
+TAKE SCREEN SHOT of the current window:
+--------------------------------------
+
+Takes the screenshot of the visible portion of the window.
+
+	 File src1 = driver.getScreenshotAs(OutputType.FILE);
+	 File dst = new File("./snaps/seat.png");
+	 FileUtils.copyFile(src1, dst);
+******************************************************************************************************************
+
+
+
+
+
+
+
+
 
 
 
