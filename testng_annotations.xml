@@ -1,0 +1,18 @@
+<suite name="suite">
+
+	<test thread-count="2" name="test1" >
+		<classes>
+			<class name="week5.day1.TestngTestcases"></class>
+			<class name="week5.day1.LeafTapsTestcases"></class>
+			
+		</classes>
+	</test>
+	
+	<!-- <test thread-count="2" name="test2" >
+		<classes>
+			<class name="week5.day1.TestngTestcases"></class>
+			
+		</classes>
+	</test> -->
+	
+</suite>
