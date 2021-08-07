@@ -1,0 +1,61 @@
+sofwares Needed:
+-----------------
+TestNG eclipse plugin
+TestNG dependency in pom.xml
+
+TestNG: Test Execution framework
+
+TestNG?
+--------
+- Test result will be generated for each execution
+- Has feature to execute multiple test cases sequentially
+- Has feature to execute test cases in parallel with multiple browsers
+- supports data parameterization: execute tests with multiple data
+- Will generate a html report for the execution
+- Supports cross browser testing
+- We can control the test execution using TestNG annotations and attributes
+- We can able to rerun the failed
+
+testng.xml structure:
+---------------------
+<suite>
+	<test>
+		<classes>
+			<class />
+			<class />
+			<class />
+		</classes>
+
+	</test>
+		
+</suite>
+
+
+verbose -> Its an testng.xml file attribute to get the failure log in the console
+allowed verbose values -> 0 to 10 
+0 -> No log
+10 -> maximum log
+
+What is the default value for verbose? -> 2
+
+TestNG Annonations:
+===================
+@Test -> mandatory 
+
+Annotations execution order
+===========================
+@BeforeSuite -> Cloud server / to start report
+	@BeforeTest -> DB connection / Test case details
+		@BeforeClass -> To setup the test details in the report
+			@BeforeMethod -> Precondition for each testcase
+				@Test  -> Testcase
+			@AfterMethod -> Post condition for each testcase
+		@AfterClass -> 
+	@AfterTest -> Close the connection
+@AfterSuite	-> Close the server connection / stop the report
+			
+@Before -> Precondition
+@After -> Postcondition
+
+
+
