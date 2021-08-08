@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Suite">
+
+ <parameter name="url" value="http://leaftaps.com/opentaps/"></parameter>
+ <parameter name="username" value="demoCSR"></parameter>
+ <parameter name="password" value="crmsfa"></parameter>
+ 
+  <test thread-count="5" name="Test" verbose="5">
+    <classes>
+       <class name="testcase.LoginNegativeScenario"/>
+      <!--  <class name="testcase.EditLead"/> -->
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
