@@ -1,0 +1,22 @@
+Cucumber Notes:
+---------------------------
+	Features -> To write scenarios using Gherkin keywords in the form feature files
+	StepDefinition -> Implement Selenium/java code for each step in the form of methods
+	Runner -> TestNG (AbstractTestNGCucumberTest)
+	
+- We should implement all the step
+	UndefinedStepException - When there is no implementation meythod
+
+- One method should be there for each unique steps
+	multiple method for single step - DuplicateStepDefinitionException
+	
+Runner	
+	@CucumberOptions
+		features -> to define path of the feature
+		glue -> to mention package name of the stepDefinition
+		publish(true) -> to generate cucumber report
+		monchrome(true) -> to remove junk values
+		
+Scenario Outline / Examples -> To pass multiple test data
+
+Background -> To have common steps for all the scenarios in a feature file
