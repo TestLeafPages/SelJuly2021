@@ -4,12 +4,20 @@ import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.BeforeClass;
+import org.testng.annotations.BeforeTest;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class CreateLead extends BaseClass {
+	
+	@BeforeTest
+	public void setFileName() {
+		excelFileName = "CreateLead";
+
+	}
 
 	@Test(dataProvider = "fetchData")
 	public void runCreateLead(String company,String firstName, String lastName, String phNo) {
@@ -23,14 +31,6 @@ public class CreateLead extends BaseClass {
 	}
 	
 	
-	@DataProvider(name="fetchData")
-	public String[][] sendData() throws IOException {
-		//create object for ReadExcel
-		ReadExcel re = new ReadExcel();
-		//String[][] data = re.readData();
-		
-		return re.readData("CreateLead");
-	}
 	
 	
 	

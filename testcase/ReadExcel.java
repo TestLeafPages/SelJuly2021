@@ -9,7 +9,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 public class ReadExcel {
 
-	public String[][] readData(String fileName) throws IOException {
+	public static String[][] readData(String fileName) throws IOException {
 		//step1: set the path for the workbook
 		XSSFWorkbook wb = new XSSFWorkbook("./data/"+fileName+".xlsx");
 		

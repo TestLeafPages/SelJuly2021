@@ -1,23 +1,42 @@
 package testcase;
 
+import java.io.IOException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Parameters;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
-	public ChromeDriver driver;
+	public RemoteWebDriver driver;
+	public String excelFileName;
 	
-	@Parameters({"url","username","password"}) //name should exactly matching, but order doesn't matter
+	@DataProvider(name="fetchData", indices= 0)
+	public String[][] sendData() throws IOException {
+		return ReadExcel.readData(excelFileName);
+	}
+	
+	@Parameters({"url","username","password","browser"}) //name should exactly matching, but order doesn't matter
 	@BeforeMethod
-	public void preCondition(String url, String uName, String pWord) {
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
+	public void preCondition(String url, String uName, String pWord, String browser) {
+		
+		if(browser.equalsIgnoreCase("chrome")) {
+			WebDriverManager.chromedriver().setup();
+			driver = new ChromeDriver();
+		}else if (browser.equalsIgnoreCase("edge")) {
+			WebDriverManager.edgedriver().setup();
+			driver = new EdgeDriver();
+		}
+		
+		
+		
 		driver.manage().window().maximize();
 		driver.get(url);
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
@@ -34,5 +53,14 @@ public class BaseClass {
 		driver.close();
 
 	}
+	
+
+	
+	
+	
+	
+	
+	
+	
 
 }
