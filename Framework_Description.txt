@@ -1,0 +1,34 @@
+LeafBot - Hybrid Framework: 
+======================
+	This framework is designed based on Page Object Model. We used Selenium WebDriver to interact with Web application, TestNg is used for test execution. Apache POI to read the data from excel to support multiple data testing. Cucumber is used to support the BDD approach and Extent report is used to get a html automation summary report.
+
+
+What are the components:
+=====================
+1. Browser and Element interfaces to design this framework
+2. SeleniumBase is the library for the Wrapper methods (implemented the interfaces)
+3. ProjectSpecificMethods as Base class having common methods specific to the project
+4. pages package to have the classes for each page
+5. Testcases package to have the classes for each test case
+6. Utils package to have the classes related to external applications
+	DataLibrary(to read data from excel)
+	Reporter(Configuration for ExtentReport)
+
+Hirerarchy of Execution / Execution flow:
+================================
+AbstractTestNGCucumberTests
+	Reporter
+		SeleniumBase
+			ProjectSpecificMethods
+				Pages & Testcases
+
+@BeforeSuite --> Reporter (startReport)
+	@BeforeTest --> TestCase class (setValues)
+		@BeforeClass --> Reporter (report)
+			@DataProvider --> ProjectSpecificMethods
+				@BeforeMethod --> ProjectSpecificMethods
+					@Test --> TestCase class
+				@AfterMethod --> ProjectSpecificMethods
+		@AfterClass --> No Method
+	@AfterTest --> No Method
+@AfterSuite	--> Reporter
